@@ -17,10 +17,11 @@ export interface Farmaco {
   forza: string;
   unitaPerConfezione?: number;
   numeroConfezioni?: number;
-  quantita_unita?: string;  // AGGIUNTA PROPRIETÀ
+  quantita_unita?: number;  // modificato da string a number
   posologia?: number;
   stato: string;
 }
+
 
 export interface Rifornimento {
   id: string;
