@@ -17,6 +17,7 @@ export interface Farmaco {
   forza: string;
   unitaPerConfezione?: number;
   numeroConfezioni?: number;
+  quantita_unita?: string;  // AGGIUNTA PROPRIETÀ
   posologia?: number;
   stato: string;
 }
