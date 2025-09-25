@@ -116,7 +116,8 @@ export const MioFarmoProvider = ({ children }: { children: ReactNode }) => {
   const aggiornaRifornimento = async (rifornimento: Rifornimento) => {
     try {
       const docRef = doc(db, "rifornimenti", rifornimento.id);
-      await updateDoc(docRef, rifornimento);
+      const rifornimentoData = { ...rifornimento };
+      await updateDoc(docRef, rifornimentoData);
     } catch (error) {
       console.error("Errore aggiornamento rifornimento:", error);
       throw error;
