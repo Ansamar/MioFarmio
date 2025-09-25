@@ -1,2 +1,2 @@
 # MioFarmio
-Gestione e distribuzione farmaci per uso privato.
+Applicazione per la gestione dei farmaci e della posologia per uso personale.
