@@ -17,11 +17,10 @@ export interface Farmaco {
   forza: string;
   unitaPerConfezione?: number;
   numeroConfezioni?: number;
-  quantita_unita?: number;  // modificato da string a number
+  quantita_unita?: number;
   posologia?: number;
   stato: string;
 }
-
 
 export interface Rifornimento {
   id: string;
@@ -85,7 +84,8 @@ export const MioFarmoProvider = ({ children }: { children: ReactNode }) => {
   const aggiornaFarmaco = async (farmaco: Farmaco) => {
     try {
       const docRef = doc(db, "farmaci", farmaco.id);
-      await updateDoc(docRef, farmaco);
+      const farmacoData = { ...farmaco };
+      await updateDoc(docRef, farmacoData);
     } catch (error) {
       console.error("Errore aggiornamento farmaco:", error);
       throw error;
